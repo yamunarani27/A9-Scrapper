@@ -173,16 +173,6 @@ for i in range(1,4):
         next_url=next_link.a["href"]
         current_url=urljoin(current_url,next_url)
 
-fake_url = "https://books.toscrape.com/catalogue/this-book-does-not-exist_99999/index.html"
-print(f"TEST: injecting fake URL {fake_url}")
-
-fake_resp = fetch_with_retry(fake_url, headers)
-if fake_resp is None:
-    print(f"Fake URL correctly failed and was skipped: {fake_url}")
-    failed_pages += 1
-else:
-    print(f"Unexpected: fake URL did not fail as expected")
-
 validated_records=[]
 bad_records=[]
     
